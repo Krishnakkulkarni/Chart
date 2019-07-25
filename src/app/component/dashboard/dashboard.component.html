@@ -1,0 +1,19 @@
+<div>
+  <button (click)="exportAsXLSX()">
+    <mat-icon>File</mat-icon>
+  </button>
+</div>
+<div fxLayoutAlign="end start">
+  <button mat-button (click)="Logout()">logout</button>
+</div>
+<div>
+  <h1 fxLayoutAlign="center center">
+    {{title}}
+  </h1>
+  <table fxLayoutAlign="center center">
+    <tr>
+      <td style="width: 700px; height:50%"><canvas id="lineChart"></canvas></td>
+    </tr>
+  </table>
+</div>
+<!--  <chart type="line" [data]="data"></chart>-->

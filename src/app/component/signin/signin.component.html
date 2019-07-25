@@ -1,0 +1,57 @@
+<div fxLayoutAlign='center center' class="outer-div">
+    <mat-card class="mat" fxFlex="30" fxFlex.sm="45" fxFlex.gt-sm="45" fxFlex.md="50" fxFlex.xs="80">
+
+        <form #LoginForm="ngForm" (ngSubmit)="onSubmit(LoginForm)" autocomplete="off">
+            <div fxLayout="column">
+
+                <div fxLayoutAlign='center center' class="header-div-in">
+                    <h3 class="header-in">Sign in</h3>
+                </div>
+
+                <div fxLayoutAlign='center center'>
+                    <h3 class="fundoo-header">With your Account</h3>
+                </div>
+
+                <div fxLayout="column" fxLayoutGap="3px" fxLayout.sm="column" fxLayoutGap.sm="5px" fxLayout.md="column"
+                    fxLayout.xs="column" fxLayoutGap.xs="5px">
+
+                    <div>
+                        <mat-form-field class="field" appearance="outline">
+                            <mat-label>Username or Email</mat-label>
+                            <input matInput class="name" type="text" name="UserName" #UserName="ngModel"
+                                [(ngModel)]="user.UserName" [pattern]="emailPattern" required>
+                        </mat-form-field>
+                    </div>
+
+                    <div>
+                        <mat-form-field class="field" appearance="outline">
+                            <mat-label
+                                [attr.data-error]="Password.errors!=null?(Password.errors.required?'required Field': 'minimum 3 characters required'):''">
+                                Password</mat-label>
+                            <input matInput type="password" name="Password" #Password="ngModel"
+                                [(ngModel)]="user.Password" required minlength="4">
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div fxLayout="row" fxLayoutGap="100px" fxLayout.sm="row" fxLayoutGap.sm="60px" fxLayout.md="row"
+                    fxLayoutGap.md="15px" fxLayout.xs="column" fxLayoutGap.xs="10px" fxLayoutAlign="space-between end">
+
+                    <div fxLayout="row" fxLayoutAlign='start start'>
+                        <a routerLink="/signup" class="register" routerLinkActive="active">Create
+                            account</a>
+                    </div>
+
+                    <div>
+                        <div fxLayout="row" fxLayoutAlign='end end'>
+                            <button mat-button class="loginbutton" type="submit">Login</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </form>
+
+    </mat-card>
+</div>
